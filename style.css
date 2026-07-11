@@ -1,0 +1,8 @@
+*:focus-visible {
+    outline: 3px solid #C5A059;
+    outline-offset: 4px;
+}
+
+.project-card.hidden {
+    display: none;
+}
