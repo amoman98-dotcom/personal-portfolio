@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "category": "data",
+    "tags": ["Big Data", "Docker"],
+    "title": "Apache Kafka & NiFi Pipeline",
+    "description": "Designed and containerized a streaming pipeline processing telemetry events via Docker, optimizing data flow rates cleanly."
+  },
+  {
+    "id": 2,
+    "category": "web",
+    "tags": ["JavaScript", "Tailwind"],
+    "title": "AuraStore E-Commerce",
+    "description": "Built a high-performance modern digital storefront tailored for custom sticker commerce, focusing on fast image loads and seamless UX."
+  },
+  {
+    "id": 3,
+    "category": "data",
+    "tags": ["Java", "OOP"],
+    "title": "Java Backend Engine",
+    "description": "Developed scalable architectural services utilizing object-oriented principles to handle large relational schemas with speed."
+  }
+]
