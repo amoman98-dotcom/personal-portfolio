@@ -4,20 +4,23 @@
     "category": "data",
     "tags": ["Big Data", "Docker"],
     "title": "Apache Kafka & NiFi Pipeline",
-    "description": "Designed and containerized a streaming pipeline processing telemetry events via Docker, optimizing data flow rates cleanly."
+    "description": "Designed and containerized a streaming pipeline processing telemetry events via Docker, optimizing data flow rates cleanly.",
+    "link": "https://github.com/amoman98-dotcom/personal-portfolio"
   },
   {
     "id": 2,
     "category": "web",
     "tags": ["JavaScript", "Tailwind"],
     "title": "AuraStore E-Commerce",
-    "description": "Built a high-performance modern digital storefront tailored for custom sticker commerce, focusing on fast image loads and seamless UX."
+    "description": "Built a high-performance modern digital storefront tailored for custom sticker commerce, focusing on fast image loads and seamless UX.",
+    "link": "https://github.com/amoman98-dotcom/personal-portfolio"
   },
   {
     "id": 3,
     "category": "data",
     "tags": ["Java", "OOP"],
     "title": "Java Backend Engine",
-    "description": "Developed scalable architectural services utilizing object-oriented principles to handle large relational schemas with speed."
+    "description": "Developed scalable architectural services utilizing object-oriented principles to handle large relational schemas with speed.",
+    "link": "https://github.com/amoman98-dotcom/personal-portfolio"
   }
 ]

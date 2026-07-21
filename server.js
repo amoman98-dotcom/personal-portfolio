@@ -1,21 +1,18 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+const PROJECTS_FILE = path.join(__dirname, 'projects.json');
+const MESSAGES_FILE = path.join(__dirname, 'messages.json');
 
 app.get('/api/projects', (req, res) => {
-    fs.readFile(path.join(__dirname, 'projects.json'), 'utf8', (err, data) => {
+    fs.readFile(PROJECTS_FILE, 'utf8', (err, data) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to read projects data' });
         }
@@ -23,7 +20,7 @@ app.get('/api/projects', (req, res) => {
     });
 });
 
-app.post('/api/contact', (req, res) => {
+app.post('/api/messages', (req, res) => {
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
@@ -38,25 +35,31 @@ app.post('/api/contact', (req, res) => {
         date: new Date().toISOString()
     };
 
-    const messagesPath = path.join(__dirname, 'messages.json');
-
-    fs.readFile(messagesPath, 'utf8', (err, data) => {
+    fs.readFile(MESSAGES_FILE, 'utf8', (err, data) => {
         let messages = [];
         if (!err && data) {
-            messages = JSON.parse(data);
+            try {
+                messages = JSON.parse(data);
+            } catch (e) {
+                messages = [];
+            }
         }
 
         messages.push(newMessage);
 
-        fs.writeFile(messagesPath, JSON.stringify(messages, null, 2), (writeErr) => {
+        fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2), (writeErr) => {
             if (writeErr) {
-                return res.status(500).json({ error: 'Failed to store message' });
+                return res.status(500).json({ error: 'Failed to save message' });
             }
-            res.status(201).json({ success: true, message: 'Message stored successfully!' });
+            res.status(201).json({ success: true, message: 'Message saved successfully!' });
         });
     });
 });
 
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.listen(PORT, () => {
-    console.log(`Server running smoothly on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momen | Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Professional Full-Stack Developer portfolio featuring scalable web architectures, modern front-end experiences, and automated streaming pipelines.">
+    <meta name="keywords" content="Momen, Full-Stack Developer, Software Engineer, Node.js, Spring Boot, Java, Portfolio, Web Development">
+    <meta name="author" content="Momen">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Momen | Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Explore advanced front-end designs and scalable backend solutions built with modern practices.">
+    <meta property="og:url" content="https://github.com/amoman98-dotcom/personal-portfolio">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+    <header class="w-full border-b border-slate-900 sticky top-0 bg-slate-950/80 backdrop-blur-md z-40">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center" aria-label="Main Navigation">
+            <a href="#" class="text-xl font-bold tracking-wider text-amber-500">MOMEN.</a>
+            <div class="flex gap-6">
+                <a href="#projects" class="hover:text-amber-500 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-amber-500 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="max-w-6xl mx-auto px-6 py-24 flex flex-col items-center text-center" aria-labelledby="hero-title">
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-black tracking-tight mb-4 text-white">Momen</h1>
+            <p id="hero-sub" class="text-xl text-amber-500 font-mono mb-6">Full-Stack Software Engineer</p>
+        </section>
+
+        <section id="projects" class="max-w-6xl mx-auto px-6 py-20 border-t border-slate-900" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="text-3xl font-bold mb-8 text-white">Selected Projects</h2>
+            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="region" aria-live="polite">
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-6xl mx-auto px-6 py-20 border-t border-slate-900" aria-labelledby="contact-title">
+            <div class="max-w-md mx-auto">
+                <h2 id="contact-title" class="text-3xl font-bold text-white mb-2 text-center">Get In Touch</h2>
+                <p class="text-slate-400 text-center mb-8">Have a project or want to collaborate? Drop a message!</p>
+                
+                <form id="contact-form" class="space-y-6" novalidate>
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                        <input type="text" id="name" required class="w-full border border-slate-700 text-slate-100 rounded px-4 py-3 bg-slate-800 focus:border-amber-500 focus:outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                        <input type="email" id="email" required class="w-full border border-slate-700 text-slate-100 rounded px-4 py-3 bg-slate-800 focus:border-amber-500 focus:outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                        <textarea id="message" rows="4" required class="w-full border border-slate-700 text-slate-100 rounded px-4 py-3 bg-slate-800 focus:border-amber-500 focus:outline-none transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 rounded transition-transform active:scale-95">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+    <footer class="w-full border-t border-slate-900 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 Momen Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
